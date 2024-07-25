@@ -2,14 +2,14 @@
     "version": 2,
     "builds": [
       {
-        "src": "D:/deploy_yolo/templates/indexproject.html",
+        "src": "templates/indexproject.html",
         "use": "@vercel/node"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "D:/deploy_yolo/templates/indexproject.html"
+        "dest": "templates/indexproject.html"
       }
     ]
   }
