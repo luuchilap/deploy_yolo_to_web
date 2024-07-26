@@ -2,14 +2,14 @@
     "version": 2,
     "builds": [
       {
-        "src": "templates/indexproject.html",
-        "use": "@vercel/node"
+        "src": "flaskapp.py",
+        "use": "@vercel/python"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "templates/indexproject.html"
+        "dest": "flaskapp.py"
       }
     ]
   }
