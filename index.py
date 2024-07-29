@@ -21,7 +21,7 @@ from YOLO_Video import video_detection
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'muhammadmoin'
-app.config['UPLOAD_FOLDER'] = '/static/files'
+app.config['UPLOAD_FOLDER'] = '../static/files'
 
 
 #Use FlaskForm to get input video file  from user
@@ -64,19 +64,7 @@ def home():
 def webcam():
     session.clear()
     return render_template('ui.html')
-@app.route('/FrontPage', methods=['GET','POST'])
-def front():
-    # Upload File Form: Create an instance for the Upload File Form
-    form = UploadFileForm()
-    if form.validate_on_submit():
-        # Our uploaded video file path is saved here
-        file = form.file.data
-        file.save(os.path.join(os.path.abspath(os.path.dirname(__file__)), app.config['UPLOAD_FOLDER'],
-                               secure_filename(file.filename)))  # Then save the file
-        # Use session storage to save video file path
-        session['video_path'] = os.path.join(os.path.abspath(os.path.dirname(__file__)), app.config['UPLOAD_FOLDER'],
-                                             secure_filename(file.filename))
-    return render_template('videoprojectnew.html', form=form)
+
 @app.route('/video')
 def video():
     #return Response(generate_frames(path_x='static/files/bikes.mp4'), mimetype='multipart/x-mixed-replace; boundary=frame')
