@@ -21,7 +21,7 @@ from YOLO_Video import video_detection
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'muhammadmoin'
-app.config['UPLOAD_FOLDER'] = '../static/files'
+app.config['UPLOAD_FOLDER'] = '/static/files'
 
 
 #Use FlaskForm to get input video file  from user
